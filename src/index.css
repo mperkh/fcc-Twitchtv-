@@ -1,5 +1,40 @@
 body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  padding-top: 2em;
+}
+
+.channelthumb {
+  margin-right: 20px;
+}
+
+.channelthumb img {
+  width: 70px;
+  height: 70px;
+}
+
+.list-group-item {
+  min-height: 92px;
+}
+
+p.list-group-item-text,
+h4.list-group-item-heading {
+  padding-left: 90px;
+}
+
+.list-group-item-warning {
+  background-color: #23272b;
+}
+
+a.list-group-item-warning:hover {
+  background-color: #31373c
+}
+
+.list-group-item.disabled {
+  background-color: #191919;
+  color: #42474a;
+}
+
+.list-group-item.disabled:hover {
+  background-color: #191919;
+  color: #42474a;
 }
