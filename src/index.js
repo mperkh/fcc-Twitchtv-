@@ -7,6 +7,8 @@ import { Row } from 'react-bootstrap';
 import { Col } from 'react-bootstrap';
 import { Image } from 'react-bootstrap';
 
+const clientID = '';
+
 const streams = [
   'ESL_SC2',
   'brunofin',
@@ -51,10 +53,9 @@ class SleepingChannel extends Component {
 
   componentDidMount() {
     reqwest({
-      url: 'https://api.twitch.tv/kraken/channels/' + this.props.item,
+      url: 'https://api.twitch.tv/kraken/channels/' + this.props.item  + '?client_id=' + clientID,
       type: 'jsonp',
       success: (result) => {
-        console.log(result);
         this.setState({
           result: result
         });
@@ -98,10 +99,9 @@ class Stream extends Component {
 
   queryTwitchTV(stream) {
     reqwest({
-      url: 'https://api.twitch.tv/kraken/streams/' + stream,
+      url: 'https://api.twitch.tv/kraken/streams/' + stream + '?client_id=' + clientID,
       type: 'jsonp',
       success: (result) => {
-        //console.log(result);
         this.setState({
           result: result
         });
@@ -115,7 +115,7 @@ class Stream extends Component {
 
   render() {
     if (this.state.result !== undefined) {
-      if (this.state.result.status === 422) {
+      if (this.state.result.status === 404) {
         return (
           <ClosedAccount item={this.props.item} />
         )
