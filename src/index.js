@@ -74,18 +74,6 @@ class SleepingChannel extends Component {
   }
 
   componentDidMount() {
-    /*
-    reqwest({
-      url: 'https://api.twitch.tv/kraken/channels/' + this.props.item  + '?client_id=' + clientID,
-      type: 'jsonp',
-      success: (result) => {
-        console.log(this.props.item, JSON.stringify(result));
-        this.setState({
-          result: result
-        });
-      }
-    });
-*/
     this.setState({
       result: JSON.parse(channelData[this.props.item])
     });
